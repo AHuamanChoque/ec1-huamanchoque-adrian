@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:href="@{/css/bootstrap/bootstrap.css}" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+    <h1 class="mb-4">Suma de Dígitos</h1>
+    <form action="/sumaDigitos" method="post">
+        <button type="submit" class="btn btn-primary">Calcular Suma</button>
+    </form>
+    <hr>
+    <div th:if="${sumaTotal}">
+        <h2>La suma total de los dígitos de los números del 23 al 99 es: <span th:text="${sumaTotal}"></span></h2>
+    </div>
+</div>
+
+</body>
+</html>

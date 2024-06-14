@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Mes en Letras</title>
+    <link th:href="@{/css/bootstrap/bootstrap.css}" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+    <h1 class="mb-4">Mes en Letras</h1>
+    <form action="/mesEnLetras" method="post">
+        <div class="form-group">
+            <label for="numero">Ingrese un número del 1 al 12:</label>
+            <input type="number" class="form-control" id="numero" name="numero" required min="1" max="12">
+        </div>
+        <button type="submit" class="btn btn-primary">Obtener Mes</button>
+    </form>
+
+    <hr>
+
+    <!-- Verificar si hay un error -->
+    <div th:if="${error}">
+        <p class="text-danger" th:text="${error}"></p>
+    </div>
+    <!-- Mostrar el nombre del mes si no hay error -->
+    <div th:if="${nombreMes}">
+        <p>El número ingresado corresponde al mes de <strong th:text="${nombreMes}"></strong>.</p>
+    </div>
+</div>
+</body>
+</html>
